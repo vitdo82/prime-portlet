@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.prime.com.tr/ui">
+
+    <h:head>
+        <ui:remove>
+            <!--
+            <h:outputScript library="javascript" name="util.js" target="head"/>
+            <h:outputStylesheet library="css" name="styles.css" target="body"/>
+            -->
+        </ui:remove>
+    </h:head>
+
+    <h:body>
+
+        <p:layout style="min-width:900px;min-height:300px;">
+            <p:layoutUnit position="west" width="200" minWidth="150" maxWidth="300" resizable="true" collapsible="true">
+
+                <h:form prependId="false">
+                    <h:panelGrid columns="1">
+                        <p:commandLink value="Agency User List" action="list"/>
+                        <p:commandLink value="Create User Profile" action="edit" update="@parent"/>
+                        <p:commandLink value="Find an Agent" action="find" update="content"/>
+                    </h:panelGrid>
+                </h:form>
+
+            </p:layoutUnit>
+            <p:layoutUnit position="center">
+
+                <div class="content" id="content">
+                    <ui:insert name="content">
+                    </ui:insert>
+                </div>
+
+            </p:layoutUnit>
+        </p:layout>
+
+    </h:body>
+</f:view>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.prime.com.tr/ui"
+                template="../template/template.xhtml">
+
+
+    <h:head></h:head>
+    <ui:define name="content">
+
+
+        <h:body>
+            <h1>Welcome View</h1>
+            <br/>
+            <h:form id="viewForm">
+                <p:commandLink id="fullId" value="Full" action="full"/>
+                <p:commandLink id="listId" value="List" action="list"/>
+            </h:form>
+        </h:body>
+    </ui:define>
+
+</ui:composition>

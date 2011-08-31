@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<liferay-portlet-app>
+	<portlet>
+		<portlet-name>1</portlet-name>
+		<instanceable>true</instanceable>
+		<ajaxable>false</ajaxable>
+	</portlet>
+
+</liferay-portlet-app>
