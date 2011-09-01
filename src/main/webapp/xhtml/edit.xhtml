@@ -88,7 +88,7 @@
                 <p:message for="expiration_off"/>
 
 
-                <p:commandButton value="Submit" action="#{editBean.saveAction}" update="@all" type="submit"/>
+                <p:commandButton value="Submit" action="#{editBean.saveAction}" process="@form" update="@all" type="submit"/>
                 <p:commandButton value="Reset" />
 
             </h:panelGrid>
