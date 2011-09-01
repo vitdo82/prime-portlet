@@ -9,7 +9,7 @@
     <ui:define name="content">
         <h2>Agency User List</h2>
         <h:form>
-            <p:dataTable value="#{test.agencyUsers}" var="user">
+            <p:dataTable value="#{listBean.agencyUsers}" var="user">
                 <p:column sortBy="#{user.firstName}">
                     <f:facet name="header">
                         <h:outputText value="First Name"/>
@@ -28,7 +28,16 @@
                     </f:facet>
                     <h:outputText value="#{user.title}"/>
                 </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Action"/>
+                    </f:facet>
+                    <p:commandLink value="Edit" action="#{listBean.editAction(user.id)}" />
+                    <p:commandLink value="View" action="#{listBean.viewAction(user.id)}" />
+                </p:column>
+
             </p:dataTable>
+
         </h:form>
     </ui:define>
 </ui:composition>

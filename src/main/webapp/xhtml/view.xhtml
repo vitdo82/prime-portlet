@@ -6,19 +6,12 @@
                 xmlns:p="http://primefaces.prime.com.tr/ui"
                 template="../template/template.xhtml">
 
-
-    <h:head></h:head>
     <ui:define name="content">
-
-
-        <h:body>
             <h1>Welcome View</h1>
-            <br/>
-            <h:form id="viewForm">
-                <p:commandLink id="fullId" value="Full" action="full"/>
-                <p:commandLink id="listId" value="List" action="list"/>
+            <h:form>
+                <h:outputText value="#{viewBean.agencyUser.firstName}" />
+
             </h:form>
-        </h:body>
     </ui:define>
 
 </ui:composition>
