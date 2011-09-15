@@ -9,6 +9,13 @@
     <name>prime-portlet</name>
     <url>http://maven.apache.org</url>
 
+
+    <scm>
+        <url>https://github.com/vitdo82/prime-portlet</url>
+        <connection>scm:git:git@github.com:vitdo82/prime-portlet.git</connection>
+        <developerConnection>scm:git:git@github.com:vitdo82/prime-portlet.git</developerConnection>
+    </scm>
+
     <build>
         <plugins>
             <plugin>
@@ -31,6 +38,19 @@
                     </archive>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.2.1</version>
+                <configuration>
+                    <!--
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                     -->
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
