@@ -4,11 +4,11 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:p="http://primefaces.prime.com.tr/ui"
-                template="../template/template.xhtml">
+                template="/WEB-INF/includes/template.xhtml">
 
     <ui:define name="content">
         <h2>Agency User Details</h2>
-        <h:form>
+        <h:form id="editUserForm" >
             <h:panelGrid columns="3" style="margin-left: 10px;">
 
                 <h:outputLabel for="lastName" value="Last Name: "/>
@@ -18,7 +18,8 @@
                 <h:outputLabel for="firstName" value="First Name: "/>
                 <p:inputText id="firstName" value="#{editBean.agencyUser.firstName}"/>
                 <p:message for="firstName"/>
-
+				
+				<!-- 
                 <h:outputLabel for="mi" value="MI: "/>
                 <p:inputText id="mi" value="#{editBean.agencyUser.mi}"/>
                 <p:message for="mi"/>
@@ -86,12 +87,14 @@
                 <h:outputLabel for="expiration_off" value="Expiration Date:"/>
                 <p:calendar id="expiration_off" value="#{editBean.agencyUser.expiration}" showOn="button"/>
                 <p:message for="expiration_off"/>
-
-
-                <p:commandButton value="Submit" action="#{editBean.saveAction}" process="@form" update="@all" type="submit"/>
-                <p:commandButton value="Reset" />
+                 -->
 
             </h:panelGrid>
+            <p:commandButton value="SubmitListener" actionListener="#{editBean.saveActionListener}" process="@form" />
+            <p:commandButton value="Submit" action="#{editBean.saveAction}" process="@all" update="@all"/>
+            <p:commandButton value="Reset" />
+
+
         </h:form>
     </ui:define>
 </ui:composition>

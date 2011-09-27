@@ -9,7 +9,15 @@
     <name>prime-portlet</name>
     <url>http://maven.apache.org</url>
 
+
+    <scm>
+        <url>https://github.com/vitdo82/prime-portlet</url>
+        <connection>scm:git:git@github.com:vitdo82/prime-portlet.git</connection>
+        <developerConnection>scm:git:git@github.com:vitdo82/prime-portlet.git</developerConnection>
+    </scm>
+
     <build>
+        <finalName>prime-portlet-0.0.1</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -31,6 +39,19 @@
                     </archive>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.2.1</version>
+                <configuration>
+                    <!--
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                     -->
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
@@ -63,18 +84,6 @@
 
 
         <dependency>
-            <groupId>javax.portlet</groupId>
-            <artifactId>portlet-api</artifactId>
-            <version>2.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.portletfaces</groupId>
-            <artifactId>portletfaces-bridge</artifactId>
-            <version>2.0.0</version>
-        </dependency>
-
-        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>2.5</version>
@@ -101,7 +110,6 @@
             <id>jboss</id>
             <url>https://oss.sonatype.org/content/repositories/JBoss</url>
         </repository>
-
         <repository>
             <id>maven2-repository.dev.java.net</id>
             <url>http://download.java.net/maven/2</url>
@@ -111,23 +119,23 @@
             <url>http://repository.jboss.org/maven2</url>
         </repository>
         <repository>
+            <id>portletfaces release</id>
+            <url>http://repository.portletfaces.org/content/repositories/portletfaces-releases</url>
+        </repository>
+        <!--
+        <repository>
             <id>maven2-repository-portletfaces.org</id>
             <url>http://repo.portletfaces.org/mvn/maven2</url>
         </repository>
-
+        -->
         <repository>
             <id>prime-repo</id>
             <name>Prime Technology Maven Repository</name>
             <url>http://repository.prime.com.tr</url>
         </repository>
-
         <repository>
             <id>maven2-repository.jboss.org</id>
             <url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
-        </repository>
-        <repository>
-            <id>maven2-repository-portletfaces.org</id>
-            <url>http://repository.portletfaces.org/content/repositories/portletfaces-releases</url>
         </repository>
     </repositories>
 
@@ -138,6 +146,18 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <dependencies>
+
+                <dependency>
+                    <groupId>javax.portlet</groupId>
+                    <artifactId>portlet-api</artifactId>
+                    <version>2.0</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.portletfaces</groupId>
+                    <artifactId>portletfaces-bridge</artifactId>
+                    <version>2.0.0</version>
+                </dependency>
                 <dependency>
                     <groupId>org.jboss.mc-int</groupId>
                     <artifactId>jboss-mc-int-servlet</artifactId>
@@ -222,7 +242,7 @@
                                     <goal>deploy</goal>
                                 </goals>
                                 <configuration>
-                                    <autoDeployDir>E:\env\jboss-5.1.0.GA_Liferay\deploy\</autoDeployDir>
+                                    <autoDeployDir>/home/vitali.rydvan/env_soa/jboss-eap-5.1/jboss-as/deploy</autoDeployDir>
                                 </configuration>
                             </execution>
                         </executions>
@@ -233,8 +253,22 @@
         <profile>
             <id>tomcat</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
+
+            <dependencies>
+                <dependency>
+                    <groupId>javax.portlet</groupId>
+                    <artifactId>portlet-api</artifactId>
+                    <version>2.0</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.portletfaces</groupId>
+                    <artifactId>portletfaces-bridge</artifactId>
+                    <version>2.0.0</version>
+                </dependency>
+            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -249,13 +283,33 @@
                                     <goal>deploy</goal>
                                 </goals>
                                 <configuration>
-                                    <autoDeployDir>E:\env\liferay-portal-6.0.5\deploy\</autoDeployDir>
+                                    <autoDeployDir>/home/vitali.rydvan/env/liferay-portal-6.0.5/deploy</autoDeployDir>
                                 </configuration>
                             </execution>
                         </executions>
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>no-portlet</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>javax.portlet</groupId>
+                    <artifactId>portlet-api</artifactId>
+                    <version>2.0</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.portletfaces</groupId>
+                    <artifactId>portletfaces-bridge</artifactId>
+                    <version>2.0.0</version>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
         </profile>
     </profiles>
 
