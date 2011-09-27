@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.prime.com.tr/ui">
+
+    <h:head>
+    </h:head>
+
+    <h:body>
+
+
+                <h:form id="navigation_form" enctype="application/x-www-form-urlencoded">
+                    <h:panelGrid columns="1">
+                        <p:commandLink id="ag1" value="Agency User List" action="list"/>
+                        <p:commandLink id="ag2" value="Create User Profile" action="#{editBean.createViewAction}" ajax="true"/>
+                        <p:commandLink id="ag3" value="Find an Agent" action="find" ajax="true"/>
+                    </h:panelGrid>
+                </h:form>
+
+
+                    <ui:insert name="content"></ui:insert>
+
+<!--
+                <p:layout style="min-width:900px;min-height:300px;">
+                    <p:layoutUnit position="west" width="200" minWidth="150" maxWidth="300" resizable="true" collapsible="true">
+
+            </p:layoutUnit>
+                       <p:layoutUnit position="center">
+
+            </p:layoutUnit>
+        </p:layout>
+    -->
+    </h:body>
+</f:view>

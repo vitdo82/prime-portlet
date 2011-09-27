@@ -4,15 +4,14 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:p="http://primefaces.prime.com.tr/ui"
-                template="../template/template.xhtml">
+                template="/WEB-INF/includes/template.xhtml">
 
     <ui:define name="content">
+            <h1>Welcome View</h1>
+            <h:form>
+                <h:outputText value="#{viewBean.agencyUser.firstName}" />
 
-        Full !!!!
-        <h:form id="formFull">
-            <p:commandLink id="full_id_view" value="View" action="view"/>
-            <p:commandLink id="full_id_edit" value="Edit" action="edit"/>
-        </h:form>
-
+            </h:form>
     </ui:define>
+
 </ui:composition>
