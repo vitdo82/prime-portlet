@@ -30,13 +30,13 @@ public class ListBean implements Serializable {
     }
 
     public String viewAction(Long id){
-
-        return "view";
+    	sessionBean.setPage("view");
+        return null;
     }
 
     public String editAction(Long id){
-
-        return "edit";
+    	sessionBean.setPage("edit");
+        return null;
     }
 
     public SessionBean getSessionBean() {
