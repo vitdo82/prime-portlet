@@ -8,7 +8,7 @@
 		<portlet-class>org.portletfaces.bridge.GenericFacesPortlet</portlet-class>
 		<init-param>
 			<name>javax.portlet.faces.defaultViewId.view</name>
-			<value>/list.xhtml</value>
+			<value>/h/template.xhtml</value>
 		</init-param>
         <!--
 		<init-param>

@@ -4,29 +4,27 @@
 	<h:head>
 	</h:head>
 	<h:body>
-		<h:form id="navigation_form">
-			<h:panelGrid columns="1">
-				<p:commandLink id="ag1" value="Agency User List" action="list" />
-				<p:commandLink id="ag2" value="Create User Profile" action="#{editBean.createViewAction}" ajax="true" />
-				<p:commandLink id="ag3" value="Find an Agent" action="find" ajax="true" />
-			</h:panelGrid>
-		</h:form>
 
 		<h:form id="navigation_form2">
 			<h:panelGrid columns="1">
-				<h:commandLink id="ag12" value="Agency User List H" action="list">
-					<f:ajax render="@all" execute="@all"/>
+				<h:commandLink id="ag12" value="Agency User List H" action="#{sessionBean.page('list')}">
+					<f:ajax render=":content1" />
 				</h:commandLink>
-				<h:commandLink id="ag22" value="Create User Profile H" action="#{editBean.createViewAction}">
-					<f:ajax render="@all" execute="@all"/>
+				<h:commandLink id="ag223" value="Create User Profile H22222" action="#{sessionBean.page('edit')}">
+					<f:ajax render=":content1"/>
 				</h:commandLink>
-				<h:commandLink id="ag32" value="Find an Agent H" action="find">
-					<f:ajax render="@all" execute="@all"/>
+				<h:commandLink id="ag32" value="Find an Agent H" action="#{sessionBean.page('find')}">
+					<f:ajax render=":content1" />
 				</h:commandLink>
 			</h:panelGrid>
+			<h:inputHidden value="#{sessionBean.page}" />
 		</h:form>
-
-		<ui:insert name="content"></ui:insert>
+		
+		
+		<h:panelGroup id="content1" layout="block">
+			<ui:include src="/h/#{sessionBean.page}.xhtml" />	
+		</h:panelGroup>
+		
 
 		<!--
                 <p:layout style="min-width:900px;min-height:300px;">

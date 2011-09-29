@@ -17,6 +17,7 @@ public class SessionBean implements Serializable {
     private static final long serialVersionUID = 7476941262307760323L;
 
     private List<AgencyUser> agencyUsers;
+    private String page;
 
     public SessionBean() {
     }
@@ -24,6 +25,7 @@ public class SessionBean implements Serializable {
     @PostConstruct
     protected void init() {
         getAgencyUsers().add(new AgencyUser(1L, "TestFirst", "TestLast", "Title"));
+        page = "view";
     }
 
     public List<AgencyUser> getAgencyUsers() {
@@ -32,4 +34,17 @@ public class SessionBean implements Serializable {
         }
         return agencyUsers;
     }
+
+	public String getPage() {
+		return page;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
+	}
+	
+	public String page(String page){
+		this.page = page;
+		return null;
+	}
 }

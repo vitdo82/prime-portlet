@@ -37,7 +37,8 @@ public class EditBean implements Serializable {
 		System.out.println("----Run save view action");
 		agencyUser.setId(System.currentTimeMillis());
 		sessionBean.getAgencyUsers().add(agencyUser);
-		return "list";
+		sessionBean.setPage("list");
+		return null;
 	}
 
 	public SessionBean getSessionBean() {
