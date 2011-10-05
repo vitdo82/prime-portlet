@@ -4,3 +4,4 @@ prime-portlet.iml
 target
 /.project
 /.settings
+.classpath
