@@ -31,10 +31,10 @@
                     <f:facet name="header">
                         <h:outputText value="Action"/>
                     </f:facet>
-                    <h:commandLink value="Edit" action="#{listBean.editAction(user.id)}" >
+                    <h:commandLink value="Edit" action="#{editBean.navigateEditAction(user.id)}" >
                     	<f:ajax render=":content1" execute="@form" />
                     </h:commandLink>
-                    <h:commandLink value="View" action="#{listBean.viewAction(user.id)}" >
+                    <h:commandLink value="View" action="#{viewBean.navigateViewAction(user.id)}" >
                     	<f:ajax render=":content1" execute="@form" />
                     </h:commandLink>
                 </p:column>

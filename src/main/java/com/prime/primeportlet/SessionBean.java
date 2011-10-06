@@ -25,7 +25,7 @@ public class SessionBean implements Serializable {
     @PostConstruct
     protected void init() {
         getAgencyUsers().add(new AgencyUser(1L, "TestFirst", "TestLast", "Title"));
-        page = "view";
+        page = "list";
     }
 
     public List<AgencyUser> getAgencyUsers() {

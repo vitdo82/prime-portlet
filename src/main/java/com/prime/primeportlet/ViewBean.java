@@ -38,4 +38,16 @@ public class ViewBean implements Serializable {
     public void setSessionBean(SessionBean sessionBean) {
         this.sessionBean = sessionBean;
     }
+
+    public void navigateViewAction(Long id){
+        for(AgencyUser agencyUser : sessionBean.getAgencyUsers()){
+            if(agencyUser.getId().equals(id)){
+                this.agencyUser = agencyUser;
+                sessionBean.setPage("view");
+                return ;
+            }
+        }
+        this.agencyUser = new AgencyUser();
+        sessionBean.setPage("view");
+    }
 }

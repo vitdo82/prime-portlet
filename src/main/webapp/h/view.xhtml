@@ -3,12 +3,14 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:p="http://primefaces.prime.com.tr/ui"
-                >
+                xmlns:p="http://primefaces.prime.com.tr/ui">
 
             <h1>Welcome View</h1>
             <h:form>
                 <h:outputText value="#{viewBean.agencyUser.firstName}" />
+                <h:outputText value="#{viewBean.agencyUser.id}" />
+                <h:outputText value="#{viewBean.agencyUser.agencyProfile}" />
+                <h:outputText value="#{viewBean.agencyUser.effective}" />
 
             </h:form>
 

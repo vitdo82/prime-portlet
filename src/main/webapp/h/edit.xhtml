@@ -3,99 +3,96 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:p="http://primefaces.prime.com.tr/ui"
-                >
+                xmlns:p="http://primefaces.prime.com.tr/ui">
 
-        <h2>Agency User Details</h2>
-        <h:form id="editUserForm" >
-            <h:panelGrid columns="3" style="margin-left: 10px;">
+    <h2>Agency User Details</h2>
+    <h:form id="editUserForm">
+        <h:panelGrid columns="3" style="margin-left: 10px;">
 
-                <h:outputLabel for="lastName" value="Last Name: "/>
-                <h:inputText id="lastName" value="#{editBean.agencyUser.lastName}"/>
-                <h:message for="lastName"/>
+            <h:outputLabel for="lastName" value="Last Name: "/>
+            <p:inputText id="lastName" value="#{editBean.agencyUser.lastName}"/>
+            <p:message for="lastName"/>
 
-                <h:outputLabel for="firstName" value="First Name: "/>
-                <h:inputText id="firstName" value="#{editBean.agencyUser.firstName}"/>
-                <h:message for="firstName"/>
-				
-				<!-- 
-                <h:outputLabel for="mi" value="MI: "/>
-                <p:inputText id="mi" value="#{editBean.agencyUser.mi}"/>
-                <p:message for="mi"/>
+            <h:outputLabel for="firstName" value="First Name: "/>
+            <p:inputText id="firstName" value="#{editBean.agencyUser.firstName}"/>
+            <p:message for="firstName"/>
 
-                <h:outputLabel for="suffix" value="Suffix: "/>
-                <p:selectOneMenu id="suffix" value="#{editBean.agencyUser.suffix}">
-                    <f:selectItem itemValue="1" itemLabel="I"/>
-                    <f:selectItem itemValue="2" itemLabel="II"/>
-                    <f:selectItem itemValue="3" itemLabel="III"/>
-                    <f:selectItem itemValue="4" itemLabel="IV"/>
-                </p:selectOneMenu>
-                <p:message for="suffix"/>
+            <h:outputLabel for="mi" value="MI: "/>
+            <p:inputText id="mi" value="#{editBean.agencyUser.mi}"/>
+            <p:message for="mi"/>
 
-                <h:outputLabel for="title" value="Title: "/>
-                <p:selectOneMenu id="title" value="#{editBean.agencyUser.title}">
-                    <f:selectItem itemValue="" itemLabel="Select Title"/>
-                    <f:selectItem itemValue="2" itemLabel="II"/>
-                    <f:selectItem itemValue="3" itemLabel="III"/>
-                    <f:selectItem itemValue="4" itemLabel="IV"/>
-                </p:selectOneMenu>
-                <p:message for="title"/>
+            <h:outputLabel for="suffix" value="Suffix: "/>
+            <p:selectOneMenu id="suffix" value="#{editBean.agencyUser.suffix}">
+                <f:selectItem itemValue="1" itemLabel="I"/>
+                <f:selectItem itemValue="2" itemLabel="II"/>
+                <f:selectItem itemValue="3" itemLabel="III"/>
+                <f:selectItem itemValue="4" itemLabel="IV"/>
+            </p:selectOneMenu>
+            <p:message for="suffix"/>
 
-                <h:outputLabel for="email" value="Email: "/>
-                <p:inputText id="email" value="#{editBean.agencyUser.email}"/>
-                <p:message for="email"/>
+            <h:outputLabel for="title" value="Title: "/>
+            <p:selectOneMenu id="title" value="#{editBean.agencyUser.title}">
+                <f:selectItem itemValue="" itemLabel="Select Title"/>
+                <f:selectItem itemValue="2" itemLabel="II"/>
+                <f:selectItem itemValue="3" itemLabel="III"/>
+                <f:selectItem itemValue="4" itemLabel="IV"/>
+            </p:selectOneMenu>
+            <p:message for="title"/>
 
-                <h:outputLabel for="telephone" value="Telephone: "/>
-                <p:inputText id="telephone" value="#{editBean.agencyUser.telephone}"/>
-                <p:message for="telephone"/>
+            <h:outputLabel for="email" value="Email: "/>
+            <p:inputText id="email" value="#{editBean.agencyUser.email}"/>
+            <p:message for="email"/>
 
-                <h:outputLabel for="extension" value="Extension: "/>
-                <p:inputText id="extension" value="#{editBean.agencyUser.extension}"/>
-                <p:message for="extension"/>
+            <h:outputLabel for="telephone" value="Telephone: "/>
+            <p:inputText id="telephone" value="#{editBean.agencyUser.telephone}"/>
+            <p:message for="telephone"/>
+
+            <h:outputLabel for="extension" value="Extension: "/>
+            <p:inputText id="extension" value="#{editBean.agencyUser.extension}"/>
+            <p:message for="extension"/>
 
 
-                <h:outputLabel for="licensed" value="Licensed to solicit for Medical Protective?"/>
-                <p:selectOneRadio id="licensed" value="#{editBean.agencyUser.licensed}">
-                    <f:selectItem itemValue="true" itemLabel="Yes"/>
-                    <f:selectItem itemValue="false" itemLabel="No"/>
-                </p:selectOneRadio>
-                <p:message for="licensed"/>
+            <h:outputLabel for="licensed" value="Licensed to solicit for Medical Protective?"/>
+            <p:selectOneRadio id="licensed" value="#{editBean.agencyUser.licensed}">
+                <f:selectItem itemValue="true" itemLabel="Yes"/>
+                <f:selectItem itemValue="false" itemLabel="No"/>
+            </p:selectOneRadio>
+            <p:message for="licensed"/>
 
 
-                <h:outputLabel for="user_role" value="User Role:"/>
-                <p:selectOneMenu id="user_role" value="#{editBean.agencyUser.userRole}">
-                    <f:selectItem itemValue="" itemLabel="Select Role"/>
-                    <f:selectItem itemValue="user" itemLabel="User"/>
-                    <f:selectItem itemValue="agency_administrator" itemLabel="Agency Administrator"/>
-                </p:selectOneMenu>
-                <p:message for="user_role"/>
+            <h:outputLabel for="user_role" value="User Role:"/>
+            <p:selectOneMenu id="user_role" value="#{editBean.agencyUser.userRole}">
+                <f:selectItem itemValue="" itemLabel="Select Role"/>
+                <f:selectItem itemValue="user" itemLabel="User"/>
+                <f:selectItem itemValue="agency_administrator" itemLabel="Agency Administrator"/>
+            </p:selectOneMenu>
+            <p:message for="user_role"/>
 
 
-                <h:outputLabel for="agency_profile" value="Agency Profile:"/>
-                <p:selectOneMenu id="agency_profile" value="#{editBean.agencyUser.agencyProfile}">
-                    <f:selectItem itemValue="" itemLabel="Select Agency"/>
-                    <f:selectItem itemValue="agency_administrator" itemLabel="Agency Administrator"/>
-                </p:selectOneMenu>
-                <p:message for="agency_profile"/>
+            <h:outputLabel for="agency_profile" value="Agency Profile:"/>
+            <p:selectOneMenu id="agency_profile" value="#{editBean.agencyUser.agencyProfile}">
+                <f:selectItem itemValue="" itemLabel="Select Agency"/>
+                <f:selectItem itemValue="agency_administrator" itemLabel="Agency Administrator"/>
+            </p:selectOneMenu>
+            <p:message for="agency_profile"/>
 
-                <h:outputLabel for="effective_off" value="Effective as of:"/>
-                <p:calendar id="effective_off" value="#{editBean.agencyUser.effective}" showOn="button"/>
-                <p:message for="effective_off"/>
-
-
-                <h:outputLabel for="expiration_off" value="Expiration Date:"/>
-                <p:calendar id="expiration_off" value="#{editBean.agencyUser.expiration}" showOn="button"/>
-                <p:message for="expiration_off"/>
-                 -->
-
-            </h:panelGrid>
-            <h:commandButton value="Submit" action="#{editBean.saveAction}">
-            	<f:ajax render=":content1" execute="@form" />
-            </h:commandButton>
-            <h:commandButton value="Reset" >
-            	<f:ajax render="@form" execute="@form" />
-            </h:commandButton>
+            <h:outputLabel for="effective_off" value="Effective as of:"/>
+            <p:calendar id="effective_off" value="#{editBean.agencyUser.effective}" showOn="button"/>
+            <p:message for="effective_off"/>
 
 
-        </h:form>
+            <h:outputLabel for="expiration_off" value="Expiration Date:"/>
+            <p:calendar id="expiration_off" value="#{editBean.agencyUser.expiration}" showOn="button"/>
+            <p:message for="expiration_off"/>
+
+        </h:panelGrid>
+        <h:commandButton value="Submit" action="#{editBean.saveAction}">
+            <f:ajax render=":content1" execute="@form"/>
+        </h:commandButton>
+        <h:commandButton value="Reset">
+            <f:ajax render="@form" execute="@form"/>
+        </h:commandButton>
+
+
+    </h:form>
 </ui:composition>

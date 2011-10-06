@@ -34,7 +34,6 @@ public class EditBean implements Serializable {
 	}
 
 	public String saveAction() {
-		System.out.println("----Run save view action");
 		agencyUser.setId(System.currentTimeMillis());
 		sessionBean.getAgencyUsers().add(agencyUser);
 		sessionBean.setPage("list");
@@ -54,9 +53,19 @@ public class EditBean implements Serializable {
 		sessionBean.getAgencyUsers().add(agencyUser);
 	}
 
+    public void navigateEditAction(Long id){
+        for(AgencyUser agencyUser : sessionBean.getAgencyUsers()){
+            if (agencyUser.getId().equals(id)) {
+               this.agencyUser = agencyUser;
+                sessionBean.setPage("edit");
+                return ;
+            }
+        }
+        this.agencyUser = new AgencyUser();
+        sessionBean.setPage("edit");
+    }
+
 	public String createViewAction() {
-		System.out.println("----Run create view action");
-		// return "create";
 		return "edit";
 	}
 }

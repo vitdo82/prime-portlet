@@ -1,40 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.prime.com.tr/ui">
-	<h:head>
-	</h:head>
-	<h:body>
-
-		<h:form id="navigation_form2">
-			<h:panelGrid columns="1">
-				<h:commandLink id="ag12" value="Agency User List H" action="#{sessionBean.page('list')}">
-					<f:ajax render=":content1" />
-				</h:commandLink>
-				<h:commandLink id="ag223" value="Create User Profile H22222" action="#{sessionBean.page('edit')}">
-					<f:ajax render=":content1"/>
-				</h:commandLink>
-				<h:commandLink id="ag32" value="Find an Agent H" action="#{sessionBean.page('find')}">
-					<f:ajax render=":content1" />
-				</h:commandLink>
-			</h:panelGrid>
-			<h:inputHidden value="#{sessionBean.page}" />
-		</h:form>
-		
-		
-		<h:panelGroup id="content1" layout="block">
-			<ui:include src="/h/#{sessionBean.page}.xhtml" />	
-		</h:panelGroup>
-		
-
-		<!--
-                <p:layout style="min-width:900px;min-height:300px;">
-                    <p:layoutUnit position="west" width="200" minWidth="150" maxWidth="300" resizable="true" collapsible="true">
-
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:head>
+    </h:head>
+    <h:body>
+        <p:layout style="min-width:900px;min-height:300px;">
+            <p:layoutUnit position="west" width="200" minWidth="150" maxWidth="300" resizable="true" collapsible="true">
+                <h:form id="navigation_form2">
+                    <h:panelGrid columns="1">
+                        <h:commandLink id="ag12" value="Agency User List" action="#{sessionBean.page('list')}">
+                            <f:ajax render=":content1"/>
+                        </h:commandLink>
+                        <h:commandLink id="ag223" value="Create User Profile"
+                                       action="#{sessionBean.page('edit')}">
+                            <f:ajax render=":content1"/>
+                        </h:commandLink>
+                        <h:commandLink id="ag32" value="Find an Agent" action="#{sessionBean.page('find')}">
+                            <f:ajax render=":content1"/>
+                        </h:commandLink>
+                    </h:panelGrid>
+                    <h:inputHidden value="#{sessionBean.page}"/>
+                </h:form>
             </p:layoutUnit>
-                       <p:layoutUnit position="center">
+            <p:layoutUnit position="center">
+                <h:panelGroup id="content1" layout="block">
+                    <ui:include src="/h/#{sessionBean.page}.xhtml"/>
+                </h:panelGroup>
 
             </p:layoutUnit>
         </p:layout>
-    -->
-	</h:body>
+    </h:body>
 </f:view>
